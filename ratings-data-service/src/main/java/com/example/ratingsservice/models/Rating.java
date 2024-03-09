@@ -1,5 +1,6 @@
 package com.example.ratingsservice.models;
 
+
 public class Rating {
 
     private String movieId;
