@@ -20,7 +20,7 @@ public class RatingsService {
         this.ratingRepository = ratingRepository;
     }
     public UserRating getRatingsByUserId(String userId) {
-        List<RatingEntity> ratings = ratingRepository.findByUserRatingId(userId);
+        List<RatingEntity> ratings = ratingRepository.findByUserId(userId);
         return new UserRating(ratings.stream()
                 .map(rating -> new Rating(rating.getMovieId(), rating.getRating()))
                 .collect(Collectors.toList()));

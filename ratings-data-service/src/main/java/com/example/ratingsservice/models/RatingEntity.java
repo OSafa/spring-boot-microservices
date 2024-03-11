@@ -16,10 +16,7 @@ public class RatingEntity {
     @Column(name = "movie_id",  columnDefinition = "VARCHAR(255) CHARACTER SET latin1")
     private String movieId; // This field is also part of the composite key
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", insertable = false, updatable = false)
-    private UserRatingEntity userRating; // Maintain the relationship
-
+    @Column(name = "rating", columnDefinition = "INT")
     private int rating;
 
     // Getters and setters
@@ -46,16 +43,5 @@ public class RatingEntity {
 
     public void setRating(int rating) {
         this.rating = rating;
-    }
-
-    public UserRatingEntity getUserRating() {
-        return userRating;
-    }
-
-    public void setUserRating(UserRatingEntity userRating) {
-        this.userRating = userRating;
-        if (userRating != null) {
-            this.userId = userRating.getId(); // Ensure consistency
-        }
     }
 }

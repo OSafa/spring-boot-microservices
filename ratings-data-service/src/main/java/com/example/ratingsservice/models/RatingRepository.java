@@ -7,5 +7,5 @@ import java.util.List;
 @Repository
 public interface RatingRepository extends JpaRepository<RatingEntity, RatingId> {
     // Custom query method to find ratings by user ID
-    List<RatingEntity> findByUserRatingId(String id);
+    List<RatingEntity> findByUserId(String id);
 }
